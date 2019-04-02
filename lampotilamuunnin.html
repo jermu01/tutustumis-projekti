@@ -11,15 +11,26 @@
     <select name="celsius">
             <option value="Celsius">Celsius-> Fahrenheit</option>
             <option value="Fahrenheit">Fahrenheit-> Celsius</option>
-            
           </select>
-    <form>
+    <form id="frm1" action ="/action_page.php">
        Syötä lämpötila :<br>
-        <input type="text" name="lämpötila">
-        <input type="submit" value="Muunna"><br>
+       <input type="text" name="number" value="">
+       <input type="button" onclick="myFunction()" value="Muunna">
+    </form> 
+    <from action="/action_page.php">
         <input type="radio" name="desimaali" value="1 desimaali" checked> 1 desimaali<br>
         <input type="radio" name="desimaali" value="2 desimaali"> 2 desimaali<br>
         <input type="radio" name="desimaali" value="3 desimaali"> 3 desimaali
-      </form>  
+      </form>
+      <p id="demo"></p>  
+
+      <script>
+        function myFunction(); {
+          document.getElementById("frm1").method;
+        document.getElementById("demo").innerHTML = x;
+        var x = (32 / 1.8)
+       
+}         
+      </script>        
 </body>
 </html>
