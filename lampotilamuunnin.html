@@ -7,30 +7,37 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Lämpötilamuunnin</h1>
-    <select name="celsius">
-            <option value="Celsius">Celsius-> Fahrenheit</option>
-            <option value="Fahrenheit">Fahrenheit-> Celsius</option>
-          </select>
-    <form id="frm1" action ="/action_page.php">
-       Syötä lämpötila :<br>
-       <input type="text" name="number" value="">
-       <input type="button" onclick="myFunction()" value="Muunna">
-    </form> 
-    <from action="/action_page.php">
-        <input type="radio" name="desimaali" value="1 desimaali" checked> 1 desimaali<br>
-        <input type="radio" name="desimaali" value="2 desimaali"> 2 desimaali<br>
-        <input type="radio" name="desimaali" value="3 desimaali"> 3 desimaali
-      </form>
-      <p id="demo"></p>  
+    <h1>Jeren upea Lämpötilamuunnin</h1>
+    <form name="tempForm">
+      <select id="scale">
+        <option value="cf">Celsius-> Fahrenheit</option>
+        <option value="fc">Fahrenheit-> Celsius</option>
+      </select><br/>
+      Syötä Lämpötila:<br/>
+         <input id="temp" type="text" name="number" value="">
+         <input type="button" onclick="myFunction()" value="Muunna"><br/>
 
-      <script>
-        function myFunction(); {
-          document.getElementById("frm1").method;
-        document.getElementById("demo").innerHTML = x;
-        var x = (32 / 1.8)
-       
-}         
-      </script>        
+        <input type="radio" name="round" value="10" checked> 1 desimaali<br>
+        <input type="radio" name="round" value="100"> 2 desimaali<br>
+        <input type="radio" name="round" value="1000"> 3 desimaali<br><br>
+      </form> 
+      <p id="demo"></p>
+
+  <script>
+  function myFunction() {
+    var scale = document.getElementById("scale").value;
+    var round = document.forms['tempForm']['round'].value;
+    var temp = document.getElementById("temp").value;
+    
+    if(scale == "fc") {
+      var tulos = (temp - 32) / 1.8;
+} else {
+  var tulos = (temp) * 1.8 + 32;
+}
+  tulos = Math.round(tulos * round) / round;
+
+  document.getElementById("demo").innerHTML = tulos;
+}
+  </script>
 </body>
 </html>
